@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7fb">
+  <meta name="description" content="A local educational campus IT helpdesk request prototype.">
+  <title>Campus IT Helpdesk | Local Prototype</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Campus IT Helpdesk home"><span class="brand-mark" aria-hidden="true">H</span><span>Campus<span class="brand-light">Helpdesk</span></span></a>
+      <div class="nav-links"><a href="#submit-request">Submit a request</a><a href="#sample-tickets">Sample tickets</a></div>
+      <span class="prototype-tag"><span aria-hidden="true">●</span> Local prototype</span>
+    </nav>
+  </header>
+  <main id="main" class="container">
+    <section id="top" class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> IT SUPPORT · WORKSHOP DEMO</p>
+        <h1 id="page-title">Campus IT<br><span>Helpdesk</span></h1>
+        <p class="hero-lede">Something not working? Tell us what’s happening and we’ll create a local request summary for you.</p>
+        <div class="hero-note"><span aria-hidden="true">ⓘ</span><span><strong>Learning prototype</strong><br>This demo stores no data and asks for no personal contact details.</span></div>
+      </div>
+      <aside class="hero-card" aria-label="How the demo works">
+        <div class="hero-card-icon" aria-hidden="true">✳</div><p class="card-kicker">SIMPLE, SECURE, LOCAL</p><h2>Support starts<br>with a clear request.</h2><ol class="steps"><li><span>1</span>Describe the issue</li><li><span>2</span>Review your summary</li><li><span>3</span>Use the reference in your demo</li></ol><div class="local-badge"><span aria-hidden="true">⌂</span> Nothing leaves this browser</div>
+      </aside>
+    </section>
+    <section class="work-area" aria-label="Helpdesk request and confirmation">
+      <div class="form-card" id="submit-request">
+        <div class="section-heading"><div><p class="eyebrow">TELL US WHAT’S GOING ON</p><h2>Submit a request</h2></div><span class="step-pill">STEP 01 <span>OF 01</span></span></div>
+        <p class="form-intro">Fields marked <span aria-hidden="true">*</span> are required. Please use fictional details for this workshop demo.</p>
+        <div id="form-status" class="status-message" role="status" aria-live="polite" hidden></div>
+        <form id="request-form" novalidate>
+          <div class="field-grid">
+            <div class="field"><label for="category">Category <span aria-hidden="true">*</span></label><select id="category" name="category" required aria-describedby="category-error"><option value="">Choose a category</option><option>Hardware</option><option>Software</option><option>Network</option><option>Account Access</option><option>Other</option></select><small class="field-error" id="category-error"></small></div>
+            <div class="field"><label for="urgency">Urgency <span aria-hidden="true">*</span></label><select id="urgency" name="urgency" required aria-describedby="urgency-error"><option value="">Choose urgency</option><option>Low</option><option>Medium</option><option>High</option></select><small class="field-error" id="urgency-error"></small></div>
+            <div class="field full"><label for="title">Short title <span aria-hidden="true">*</span></label><input id="title" name="title" type="text" minlength="5" maxlength="100" autocomplete="off" placeholder="e.g. Wi-Fi connection issue" required aria-describedby="title-hint title-error"><div class="field-meta"><small id="title-hint">5–100 characters</small><small id="title-count" aria-live="polite">0 / 100</small></div><small class="field-error" id="title-error"></small></div>
+            <div class="field full"><label for="description">Description <span aria-hidden="true">*</span></label><textarea id="description" name="description" rows="5" minlength="10" maxlength="1000" placeholder="What happened? Include what you tried so far." required aria-describedby="description-hint description-error"></textarea><div class="field-meta"><small id="description-hint">10–1,000 characters</small><small id="description-count" aria-live="polite">0 / 1000</small></div><small class="field-error" id="description-error"></small></div>
+            <div class="field full"><label for="contact">Preferred contact method <span aria-hidden="true">*</span></label><select id="contact" name="contact" required aria-describedby="contact-hint contact-error"><option value="">Choose a method</option><option>Email</option><option>Phone</option><option>In-person</option></select><small class="field-hint" id="contact-hint">This demo records only your preference; it does not ask for contact details.</small><small class="field-error" id="contact-error"></small></div>
+          </div>
+          <div class="form-bottom"><p><span aria-hidden="true">🔒</span> Your request stays on this page.</p><button class="primary-button" type="submit">Create request <span aria-hidden="true">→</span></button></div>
+        </form>
+      </div>
+      <aside class="summary-card" aria-labelledby="summary-title">
+        <div class="summary-top"><span class="summary-icon" aria-hidden="true">▤</span><span class="summary-state" id="summary-state">AWAITING DETAILS</span></div>
+        <h2 id="summary-title">Request summary</h2><p class="summary-subtitle" id="summary-subtitle">Your confirmation will appear here after you submit the form.</p>
+        <div id="summary-content" class="summary-content" aria-live="polite" aria-atomic="true"><div class="empty-summary"><span aria-hidden="true">＋</span><p>Your request details will show up here.</p><small>Complete the form to generate a local reference.</small></div></div>
+        <div class="summary-foot"><span class="secure-icon" aria-hidden="true">⌑</span><span>Local demo only<br><strong>No data is sent or saved.</strong></span></div>
+      </aside>
+    </section>
+    <section id="sample-tickets" class="tickets-section" aria-labelledby="tickets-title">
+      <div class="tickets-heading"><div><p class="eyebrow">A QUICK LOOK</p><h2 id="tickets-title">Sample requests</h2><p>Fictional examples to explore the interface.</p></div><span class="sample-label"><span aria-hidden="true">✦</span> SYNTHETIC DATA</span></div>
+      <div class="filters" aria-label="Filter sample requests">
+        <div class="filter-field"><label for="filter-category">Category</label><select id="filter-category"><option value="">All categories</option><option>Hardware</option><option>Software</option><option>Network</option><option>Account Access</option></select></div>
+        <div class="filter-field"><label for="filter-urgency">Urgency</label><select id="filter-urgency"><option value="">All urgencies</option><option>Low</option><option>Medium</option><option>High</option></select></div>
+        <div class="filter-field"><label for="filter-status">Status</label><select id="filter-status"><option value="">All statuses</option><option>Submitted</option><option>In review</option><option>Resolved</option></select></div>
+        <button id="clear-filters" class="secondary-button" type="button">Clear filters</button>
+      </div>
+      <p class="filter-result" id="ticket-count" role="status" aria-live="polite"></p>
+      <div class="ticket-list" id="ticket-list" aria-label="Sample helpdesk requests"></div>
+      <noscript><p class="noscript-note">JavaScript is required to submit the local demo form and display sample requests.</p></noscript>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-inner"><a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">H</span><span>Campus<span class="brand-light">Helpdesk</span></span></a><p>Secure Application Development · Exercise 2.2</p><span>Built for learning. Runs locally.</span></div></footer>
+</body>
+</html>
